@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import axios from "axios";
+import MusicTable from "./Components/MusicTable.jsx/MusicTable";
 
 function App() {
   const [music, setMusic] = useState([]);
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      
+      <MusicTable music={music}/>
     </div>
   );
 }
