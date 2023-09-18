@@ -6,10 +6,8 @@ import MusicTable from "./Components/MusicTable.jsx/MusicTable";
 import SearchBar from "./Components/SearchBar/SearchBar";
 
 function App() {
-
   const filterSongs = (term) => {
     const filteredMusic = music.filter((song) => {
-     
       return (
         song.title.toLowerCase().includes(term.toLowerCase()) ||
         song.album.toLowerCase().includes(term.toLowerCase()) ||
@@ -18,8 +16,7 @@ function App() {
         song.releaseDate.toLowerCase().includes(term.toLowerCase())
       );
     });
-  
-    
+
     setMusic(filteredMusic);
   };
 
@@ -32,7 +29,7 @@ function App() {
         "https://localhost:7073/api/MusicLibrary"
       );
       console.log(response);
-      setMusic(response.data)
+      setMusic(response.data);
     } catch (error) {
       console.warn("Error in fetchMusic request: ", error);
     }
@@ -45,10 +42,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MusicTable music={music} /> 
-      <SearchBar onSearch={filterSongs} />
+      <div className="flex-container">
+        <MusicTable music={music} />
+        <SearchBar onSearch={filterSongs} />
+      </div>
     </div>
   );
 }
 
-export default App; 
+export default App;

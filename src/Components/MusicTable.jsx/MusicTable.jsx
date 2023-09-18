@@ -3,7 +3,7 @@ import React from "react";
 
 function MusicTable({ music }) {
     return (
-      <table>
+      <table className="flex-item">
         <thead>
           <tr>
             <th>Title</th>
