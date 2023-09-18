@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function MusicTable({ music }) {
+function MusicTable({ music = [] }) {
     return (
       <table className="flex-item">
         <thead>

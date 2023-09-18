@@ -6,6 +6,8 @@ import MusicTable from "./Components/MusicTable.jsx/MusicTable";
 import SearchBar from "./Components/SearchBar/SearchBar";
 import NewMusicForm from "./Components/NewMusicForm/NewMusicForm";
 
+
+
 function App() {
   const filterSongs = (term) => {
     const filteredMusic = music.filter((song) => {
