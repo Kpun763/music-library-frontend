@@ -4,6 +4,7 @@ import Header from "./Components/Header/Header";
 import axios from "axios";
 import MusicTable from "./Components/MusicTable.jsx/MusicTable";
 import SearchBar from "./Components/SearchBar/SearchBar";
+import NewMusicForm from "./Components/NewMusicForm/NewMusicForm";
 
 function App() {
   const filterSongs = (term) => {
@@ -45,6 +46,7 @@ function App() {
       <div className="flex-container">
         <MusicTable music={music} />
         <SearchBar onSearch={filterSongs} />
+        <NewMusicForm/>
       </div>
     </div>
   );
