@@ -3,8 +3,26 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import axios from "axios";
 import MusicTable from "./Components/MusicTable.jsx/MusicTable";
+import SearchBar from "./Components/SearchBar/SearchBar";
 
 function App() {
+
+  const filterSongs = (term) => {
+    const filteredMusic = music.filter((song) => {
+     
+      return (
+        song.title.toLowerCase().includes(term.toLowerCase()) ||
+        song.album.toLowerCase().includes(term.toLowerCase()) ||
+        song.artist.toLowerCase().includes(term.toLowerCase()) ||
+        song.genre.toLowerCase().includes(term.toLowerCase()) ||
+        song.releaseDate.toLowerCase().includes(term.toLowerCase())
+      );
+    });
+  
+    
+    setMusic(filteredMusic);
+  };
+
   const [music, setMusic] = useState([]);
   const [activeIndex, setActiveIndex] = useState(-1);
 
@@ -27,9 +45,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MusicTable music={music}/>
+      <MusicTable music={music} /> 
+      <SearchBar onSearch={filterSongs} />
     </div>
   );
 }
 
-export default App;
+export default App; 
