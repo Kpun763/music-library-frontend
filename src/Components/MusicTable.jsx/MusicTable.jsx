@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function MusicTable({ music = [] }) {
+function MusicTable({ music , onDelete}) {
     return (
       <table className="flex-item">
         <thead>
@@ -11,6 +11,7 @@ function MusicTable({ music = [] }) {
             <th>Artist</th>
             <th>Genre</th>
             <th>Release Date</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +22,9 @@ function MusicTable({ music = [] }) {
               <td>{song.artist}</td>
               <td>{song.genre}</td>
               <td>{song.releaseDate}</td>
+              <td>
+                <button onClick={() => onDelete(song.id)}>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>
